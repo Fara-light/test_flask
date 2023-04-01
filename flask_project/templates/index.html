@@ -1,0 +1,19 @@
+<!doctype html>
+
+Select car:
+
+<select id = "list of cars">
+	{% for carInfo in carList %}
+	<option value={{ carInfo[0] }} > {{ carInfo[1] }} {{ carInfo[2] }} </option>
+	{% endfor %}
+</select>
+
+<button onclick="generateLink()"> Выбрать </button>
+
+<script>
+	function generateLink() {
+		var baseUrl = "http://localhost:5000/car/";
+		var url = baseUrl + document.getElementById("list of cars").value;
+		window.location.href = url;
+	}
+</script>
